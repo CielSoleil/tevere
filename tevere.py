@@ -41,6 +41,8 @@ def get_episode_data(api_response: dict[str, Any]) -> dict[str, Any]:
     """
     series = api_response.get("series")
     title = api_response.get("title")
+    log.debug(series)
+    log.debug(title)
 
     # Other values that can be obtained (commented out by default)
     # open_at = api_response.get("open_at")
