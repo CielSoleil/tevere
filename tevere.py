@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 from argparse import ArgumentParser
+from typing import Any
 
 import niquests
 from loguru import logger as log
