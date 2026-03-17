@@ -111,9 +111,11 @@ def main():
     main_dir = args.dir.expanduser()
     series_dir = main_dir / series
 
+    # Report if directory doesn't exist
     if not series_dir.exists():
         log.info("Creating folder {}", series_dir)
 
+    # But run mkdir() regardless
     series_dir.mkdir(parents=True, exist_ok=True)
 
     return 0
