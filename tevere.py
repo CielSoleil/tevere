@@ -149,6 +149,13 @@ def main():
     if args.json:
         write_response_to_disk(response, episode_id, series_dir)
 
+    # Only give the shell script the data if we want to download the video
+    if args.download:
+        better_template = series_dir / f"{episode} - {episode_id}.%(ext)s"
+        print(better_template)
+    else:
+        # This special value stops the shell from invoking yt-dlp
+        print(1)
 
 
 if __name__ == "__main__":
