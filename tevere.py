@@ -63,6 +63,32 @@ def get_episode_data(api_response: dict[str, Any]) -> dict[str, Any]:
     return {"series" : series_title, "episode" : title}
 
 
+def write_response_to_disk(api_response: dict[str, Any], 
+                           episode_id: str, 
+                           out_path: Path) -> None:
+    """
+    Take the JSON response and save it to disk.
+    Save under the episode id as it goes easier on filename length and characters (decimal vs Japanse)
+    The function itself doesn't return anything.
+    """
+    # It is assumed that we already checked and created the output path
+    filename = f"{episode_id}.json"
+    output = out_path / filename
+
+    if output.exists():
+        log.error("File {} exists", output)
+        raise FileExistsError
+    
+    else:
+        log.info("Saving to {}", output)
+
+        with open(output, "w+") as o:
+            log.info("Dumping API response now")
+            json.dump(api_response, o, indent=4, ensure_ascii=False)
+        o.close()
+
+
+
 def main():
     parser = ArgumentParser()
     parser.add_argument("url", type=str)
