@@ -19,6 +19,17 @@ def get_id(url: str) -> str:
     return episode_id
 
 
+def make_content_url(episode_id: str) -> str:
+    """
+    Take the episode id returned by get_id()
+    Return an API url for TVer
+    """
+    content_api = f"https://contents-api.tver.jp/contents/api/v1/episodes/{episode_id}"
+    log.debug(content_api)
+
+    return content_api
+
+
 def main():
     parser = ArgumentParser()
     parser.add_argument("url", type=str)
