@@ -64,6 +64,8 @@ def main():
     if response is None:
         log.error("JSON response is empty")
         raise ValueError
+    
+    log.debug(response)
 
     return 0
 
