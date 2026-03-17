@@ -151,6 +151,7 @@ def main():
 
     # Only give the shell script the data if we want to download the video
     if args.download:
+        log.info("Calling yt-dlp now")
         better_template = series_dir / f"{episode} - {episode_id}.%(ext)s"
         print(better_template)
     else:
