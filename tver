@@ -6,7 +6,7 @@ tevere_dir=~/Git/tevere
 yt_config=~/.config/yt-dlp/tver
 
 # By default we save json to disk and download the video
-data=$(uv run --directory "$tevere_dir" tver.py -json -download)
+data=$(uv run --directory $tevere_dir tevere.py -json -download "$@")
 
 if [[ "$data" == "1" ]]; then
     echo "Video won't be downloaded"
