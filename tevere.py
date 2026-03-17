@@ -52,6 +52,8 @@ def main():
     # Request API
     log.info("GET {}", episode_data_url)
     r = niquests.get(episode_data_url, headers=h)
+    response = r.json()
+
 
     return 0
 
