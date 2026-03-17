@@ -1,5 +1,5 @@
 def main():
-    print("Hello from tevere!")
+    return 0
 
 
 if __name__ == "__main__":
