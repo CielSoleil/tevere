@@ -21,7 +21,7 @@ def get_id(url: str) -> str:
 
 def main():
     parser = ArgumentParser()
-    parser.add_argument("url")
+    parser.add_argument("url", type=str)
     parser.add_argument("-json", action="store_true")
     parser.add_argument("-debug", action="store_true")
     args = parser.parse_args()
