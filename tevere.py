@@ -54,6 +54,12 @@ def main():
     r = niquests.get(episode_data_url, headers=h)
     response = r.json()
 
+    # If we get a 404, give up
+    if r.status_code == 404:
+        log.error("Request failed: {}", r.status_code)
+        log.error("API says: {}", response)
+        raise ValueError
+    
 
     return 0
 
