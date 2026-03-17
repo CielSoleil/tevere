@@ -106,6 +106,14 @@ def main():
     series = episode_data.get("series")
     episode = episode_data.get("episode")
 
+    # Deal with ~
+    main_dir = args.dir.expanduser()
+    series_dir = main_dir / series
+
+    if not series_dir.exists():
+        log.info("Creating folder {}", series_dir)
+
+    series_dir.mkdir(parents=True, exist_ok=True)
 
     return 0
 
