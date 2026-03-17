@@ -145,7 +145,10 @@ def main():
     # But run mkdir() regardless
     series_dir.mkdir(parents=True, exist_ok=True)
 
-    return 0
+    # Save data to disk (-json)
+    if args.json:
+        write_response_to_disk(response, episode_id, series_dir)
+
 
 
 if __name__ == "__main__":
