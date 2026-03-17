@@ -37,6 +37,10 @@ def main():
     parser.add_argument("-debug", action="store_true")
     args = parser.parse_args()
 
+    # Requests headers, do not modify unless you know what you're doing!
+    h = {"user-agent" : "Mozilla/5.0",
+         "x-tver-platform-type" : "web"}
+
     if not args.debug:
         fmt = "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{function}</cyan>:<cyan>{line}</cyan> - <level>{message}</level>"
         log.remove()
