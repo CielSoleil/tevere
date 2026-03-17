@@ -11,5 +11,5 @@ data=$(uv run --directory $tevere_dir tevere.py -json -download "$@")
 if [[ "$data" == "1" ]]; then
     echo "Video won't be downloaded"
 else
-    yt-dlp --config-location "$yt_config" "$@" --output "$data"
+    yt-dlp --config-location $yt_config "$@" --output "$data"
 fi
