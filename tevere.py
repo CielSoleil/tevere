@@ -31,6 +31,8 @@ def main():
         log.remove()
         log.add(sys.stderr, level="INFO", format=fmt)
 
+    episode_id = get_id(args.url)
+
     return 0
 
 
