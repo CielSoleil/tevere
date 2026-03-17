@@ -31,6 +31,35 @@ def make_content_url(episode_id: str) -> str:
     return content_api
 
 
+def get_episode_data(api_response: dict[str, Any]) -> dict[str, Any]:
+    """
+    Take the api response we got from niquests.get()
+    Return a dict with the only two relevant value: Series name, Episode title
+
+    You can get more data out of this, but the script doesn't intend to use it.
+    For now at least.
+    """
+    series = api_response.get("series")
+    title = api_response.get("title")
+
+    # Other values that can be obtained (commented out by default)
+    # open_at = api_response.get("open_at")
+    # close_at = api_response.get("close_at")
+    # duration = api_response.get("duration")
+    # index_number = api_response.get("index_number")
+
+    # Series is another dict with the Series information, we just
+    # want the title and only if we can access it
+    # Give up if we can't get it
+    if series == None:
+        log.error("Series title can't be retrieved")
+        raise ValueError
+    
+    series_title = series.get("title")
+
+    return {"series" : series_title, "episode" : title}
+
+
 def main():
     parser = ArgumentParser()
     parser.add_argument("url", type=str)
