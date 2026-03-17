@@ -60,6 +60,10 @@ def main():
         log.error("API says: {}", response)
         raise ValueError
     
+    # If the API response is empty, give up
+    if response is None:
+        log.error("JSON response is empty")
+        raise ValueError
 
     return 0
 
