@@ -100,6 +100,13 @@ def main():
     
     log.debug(response)
 
+    episode_data = get_episode_data(response)
+
+    # This data will be used to create a better yt-dlp output template
+    series = episode_data.get("series")
+    episode = episode_data.get("episode")
+
+
     return 0
 
 
