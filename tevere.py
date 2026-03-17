@@ -43,6 +43,7 @@ def main():
         log.add(sys.stderr, level="INFO", format=fmt)
 
     episode_id = get_id(args.url)
+    episode_data_url = make_content_url(episode_id)
 
     return 0
 
