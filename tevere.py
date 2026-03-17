@@ -49,6 +49,10 @@ def main():
     episode_id = get_id(args.url)
     episode_data_url = make_content_url(episode_id)
 
+    # Request API
+    log.info("GET {}", episode_data_url)
+    r = niquests.get(episode_data_url, headers=h)
+
     return 0
 
 
