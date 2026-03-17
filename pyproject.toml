@@ -4,4 +4,7 @@ version = "0.1.0"
 description = "Te veré"
 readme = "readme.md"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "loguru>=0.7.3",
+    "niquests>=3.18.2",
+]
