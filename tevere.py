@@ -60,8 +60,9 @@ def get_episode_data(api_response: dict[str, Any]) -> dict[str, Any]:
     
     series_title = series.get("title")
 
-    if len(series_title) > 40:
-        series_title = series_title[40:]
+    if title is not None:
+        if len(title) > 40:
+            title = "FNTL"
 
     return {"series" : series_title, "episode" : title}
 
