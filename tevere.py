@@ -60,6 +60,9 @@ def get_episode_data(api_response: dict[str, Any]) -> dict[str, Any]:
     
     series_title = series.get("title")
 
+    if len(series_title) > 40:
+        series_title = series_title[40:]
+
     return {"series" : series_title, "episode" : title}
 
 
