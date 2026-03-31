@@ -80,7 +80,6 @@ def write_response_to_disk(api_response: dict[str, Any],
 
     if output.exists():
         log.error("File {} exists", output)
-        raise FileExistsError
     
     else:
         log.info("Saving to {}", output)
