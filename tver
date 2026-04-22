@@ -1,12 +1,11 @@
 #!/usr/bin/zsh
 
 # Point this variable to where you cloned tevere
-tevere_dir=~/Git/tevere
+tevere_dir=~/Git/tevere/tevere.py
 # Point this variable to your yt-dlp config
 yt_config=~/.config/yt-dlp/tver
 
 # By default we save json to disk and download the video
-data=$(uv run --directory $tevere_dir tevere.py -json -download "$@")
 
 if [[ "$data" == "1" ]]; then
     echo "Video won't be downloaded"
