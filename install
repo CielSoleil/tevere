@@ -1,5 +1,0 @@
-#!/bin/zsh
-
-cp -v tver ~/.local/bin
-chmod +x ~/.local/bin/tver
-echo "Installed. Restart your terminal."
