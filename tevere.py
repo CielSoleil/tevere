@@ -1,3 +1,5 @@
+#!/usr/bin/env -S uv run --script
+
 import sys
 import json
 from pathlib import Path
@@ -102,7 +104,10 @@ def main():
     args = parser.parse_args()
 
     # Requests headers, do not modify unless you know what you're doing!
-    h = {"user-agent" : "Mozilla/5.0",
+    h = {"user-agent" : "Mozilla/5.0 (X11; Linux x86_64; rv:149.0) Gecko/20100101 Firefox/149.0",
+         "accept" : "*/*",
+         "origin" : "https://tver.jp",
+         "referer" : "https://tver.jp",
          "x-tver-platform-type" : "web"}
 
     if not args.debug:
