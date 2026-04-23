@@ -9,6 +9,9 @@ build :
 	mkdir -p $(BUILDDIR)
 	go compile tevere.go -o $(BUILDDIR)/$(EXEC)
 
+clean:
+	rm -f $(BUILDDIR)/$(EXEC)
+
 install:
 	install -Dm755 $(BUILDDIR)/$(EXEC) $(INSTALLDIR)/$(EXEC)
 
