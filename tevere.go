@@ -47,4 +47,16 @@ func main() {
 	log.Println("Episode slug:", slug)
 
 	const tver string = "https://contents-api.tver.jp/contents/api/v1/episodes/"
+	var apiUrl string
+	var destination string
+
+	if *save {
+		// log.Println("Downloading", slug, "to file")
+		apiUrl = fmt.Sprintf("%s%s", tver, slug)
+		log.Println("Fetching", apiUrl)
+
+		destination = fmt.Sprintf("%s/%s.json", *dest, slug)
+		log.Println("File will be saved to:", destination)
+		download(apiUrl, destination)
+	}
 }
