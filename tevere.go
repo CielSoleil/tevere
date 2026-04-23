@@ -34,3 +34,15 @@ func download(url string, destination string) error {
 	_, err = io.Copy(out, resp.Body)
 	return err
 }
+
+func main() {
+	episode := flag.String("episode", "", "The TVer episode url.")
+	flag.Parse()
+	// The above should contain this: https://tver.jp/episodes/eps7hpk6h7
+
+	sep := strings.Split(*episode, "/")
+	slug := sep[len(sep)-1]
+	log.Println("Episode slug:", slug)
+
+	const tver string = "https://contents-api.tver.jp/contents/api/v1/episodes/"
+}
