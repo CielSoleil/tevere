@@ -42,7 +42,7 @@ func download(url string, destination string) error {
 func main() {
 	episode := flag.String("episode", "", "The TVer episode url.")
 	save := flag.Bool("download", false, "If passed, download the json file")
-	dest := flag.String("dest", "~", "Where will the file be saved to")
+	dest := flag.String("dest", "<dest>", "Where will the file be saved to")
 	flag.Parse()
 	// The above should contain this: https://tver.jp/episodes/eps7hpk6h7
 
